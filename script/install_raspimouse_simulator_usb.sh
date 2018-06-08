@@ -2,9 +2,8 @@
 cd `dirname $0`
 workdir=$PWD
 echo $workdir
-
-wget https://sourceforge.net/projects/opende/files/ODE/0.13/ode-0.13.tar.bz2
-tar -xf ode-0.13.tar.bz2
+#wget https://sourceforge.net/projects/opende/files/ODE/0.13/ode-0.13.tar.bz2
+#tar -xf ode-0.13.tar.bz2
 cd ode-0.13/
 cd build
 premake4 --with-demos --platform=x64 --only-double --only-shared codeblocks
@@ -23,18 +22,15 @@ codeblocks --target=Release --rebuild drawstuff.cbp
 #codeblocks --target=Release --rebuild drawstuff.cbp
 
 cd $workdir
-git clone https://github.com/Nobu19800/RasPiMouseSimulatorRTC.git
+#git clone https://github.com/Nobu19800/RasPiMouseSimulatorRTC.git
 cd RasPiMouseSimulatorRTC/
 mkdir build
 cd build
 cmake -DODE_DIRECTORIY=$workdir/ode-0.13 ..
 make
-cp -r $workdir/ode-0.13/drawstuff ./
+cp -r $workdir/ode-0.13/drawstuff $workdir/RasPiMouseSimulatorRTC/build/src
 
 
-cd $workdir
-wget https://raw.githubusercontent.com/Nobu19800/RTM_Tutorial_ROBOMECH2018/master/EXE/test.csv
-wget https://raw.githubusercontent.com/Nobu19800/RTM_Tutorial_ROBOMECH2018/master/EXE/rtc.conf
-wget https://raw.githubusercontent.com/Nobu19800/RTM_Tutorial_ROBOMECH2018/master/EXE/RaspberryPiMouseSimulator.conf
-cp rtc.conf $workdir/RasPiMouseSimulatorRTC/build/src
-cp RaspberryPiMouseSimulator.conf $workdir/RasPiMouseSimulatorRTC/build/src
+cp $workdir/EXE/test.csv $workdir/RasPiMouseSimulatorRTC/build/src
+cp $workdir/EXE/rtc.conf $workdir/RasPiMouseSimulatorRTC/build/src
+cp $workdir/EXE/RaspberryPiMouseSimulator.conf $workdir/RasPiMouseSimulatorRTC/build/src
