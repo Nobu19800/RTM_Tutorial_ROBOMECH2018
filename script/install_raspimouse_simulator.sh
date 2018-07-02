@@ -36,5 +36,6 @@ cd $workdir
 wget https://raw.githubusercontent.com/Nobu19800/RTM_Tutorial_ROBOMECH2018/master/EXE/test.csv
 wget https://raw.githubusercontent.com/Nobu19800/RTM_Tutorial_ROBOMECH2018/master/EXE/rtc.conf
 wget https://raw.githubusercontent.com/Nobu19800/RTM_Tutorial_ROBOMECH2018/master/EXE/RaspberryPiMouseSimulator.conf
+cp test.csv $workdir/RasPiMouseSimulatorRTC/build/src
 cp rtc.conf $workdir/RasPiMouseSimulatorRTC/build/src
 cp RaspberryPiMouseSimulator.conf $workdir/RasPiMouseSimulatorRTC/build/src

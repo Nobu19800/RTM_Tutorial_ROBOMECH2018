@@ -2,6 +2,7 @@
 cd `dirname $0`
 workdir=$PWD
 echo $workdir
+
 #wget https://sourceforge.net/projects/opende/files/ODE/0.13/ode-0.13.tar.bz2
 #tar -xf ode-0.13.tar.bz2
 cd ode-0.13/
